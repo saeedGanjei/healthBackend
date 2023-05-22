@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'core',
     'user',
     'rest_framework',
+    'drf_spectacular',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -79,9 +81,13 @@ WSGI_APPLICATION = 'health.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "health",
+        "USER": "milad",
+        "PASSWORD": config("PASS_POSTGRES"),
+        "HOST": "127.0.0.1",
+        "PORT": "5432",
     }
 }
 
@@ -122,6 +128,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'
 
 # Default primary key field type
@@ -131,3 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'core.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}

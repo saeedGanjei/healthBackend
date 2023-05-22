@@ -65,6 +65,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
 
+    def __unicode__(self):
+        return u"photo {0}".format(self.image.url)
+
 
 # @receiver(post_save, sender=User)
 # def user_is_created(sender, instance, created, **kwargs):
