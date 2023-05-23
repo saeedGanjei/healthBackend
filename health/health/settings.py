@@ -25,9 +25,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'django-insecure-izo$12%l3lggtp24+c%x)s@rm(27_)-2p70u)#%6m@v4#@jjoy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['saeedGangei.pythonanywhere.com']
+ALLOWED_HOSTS=['saeedGangei.pythonanywhere.com','127.0.0.1']
 
 
 # Application definition
@@ -132,6 +132,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_USER_MODEL = 'core.User'
 
