@@ -30,9 +30,10 @@ urlpatterns = [
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='api-schema'),
          name='api-docs'),
     path('api/user/', include('user.urls')),
-]
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
+] +  static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+
+# if settings.DEBUG:
+    # urlpatterns += static(settings.MEDIA_URL,
+                        #   document_root=settings.MEDIA_ROOT)
