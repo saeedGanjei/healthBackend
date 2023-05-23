@@ -1,80 +1,25 @@
 
 asgiref==3.6.0
-attrs @ file:///croot/attrs_1668696182826/work
-backports.functools-lru-cache @ file:///tmp/build/80754af9/backports.functools_lru_cache_1618170165463/work
-backports.tempfile @ file:///home/linux1/recipes/ci/backports.tempfile_1610991236607/work
 backports.weakref==1.0.post1
-beautifulsoup4 @ file:///croot/beautifulsoup4-split_1681493039619/work
-boltons @ file:///croot/boltons_1677628692245/work
 brotlipy==0.7.0
-certifi @ file:///croot/certifi_1671487769961/work/certifi
-cffi @ file:///croot/cffi_1670423208954/work
-chardet @ file:///home/builder/ci_310/chardet_1640804867535/work
-charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
-click @ file:///tmp/build/80754af9/click_1646056706450/work
-clyent==1.2.2
-cryptography @ file:///croot/cryptography_1677533068310/work
-defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 distlib==0.3.6
 Django==4.2.1
 djangorestframework==3.14.0
 drf-spectacular==0.26.2
-fastjsonschema @ file:///opt/conda/conda-bld/python-fastjsonschema_1661371079312/work
 filelock==3.12.0
-future @ file:///croot/future_1677599870788/work
-glob2 @ file:///home/linux1/recipes/ci/glob2_1610991677669/work
-idna @ file:///croot/idna_1666125576474/work
 inflection==0.5.1
-Jinja2 @ file:///croot/jinja2_1666908132255/work
-jsonpatch @ file:///tmp/build/80754af9/jsonpatch_1615747632069/work
 jsonpointer==2.1
-jsonschema @ file:///croot/jsonschema_1676558650973/work
-jupyter_core @ file:///croot/jupyter_core_1679906564508/work
-libarchive-c @ file:///tmp/build/80754af9/python-libarchive-c_1617780486945/work
-MarkupSafe @ file:///opt/conda/conda-bld/markupsafe_1654597864307/work
 navigator-updater==0.3.0
-nbformat @ file:///croot/nbformat_1670352325207/work
-packaging @ file:///croot/packaging_1678965309396/work
-pathlib @ file:///Users/ktietz/demo/mc3/conda-bld/pathlib_1629713961906/work
 Pillow==9.4.0
-pkginfo @ file:///croot/pkginfo_1679431160147/work
-platformdirs==3.5.0
-pluggy @ file:///tmp/build/80754af9/pluggy_1648024709248/work
 ply==3.11
-psutil @ file:///opt/conda/conda-bld/psutil_1656431268089/work
 psycopg==3.1.9
 psycopg-binary==3.1.9
 psycopg-pool==3.1.7
 psycopg2==2.9.6
 psycopg2-binary==2.9.6
-pycosat @ file:///croot/pycosat_1666805502580/work
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
-PyJWT @ file:///opt/conda/conda-bld/pyjwt_1657544592787/work
-pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
 PyQt5-sip==12.11.0
-pyrsistent @ file:///home/builder/ci_310/pyrsistent_1640807196327/work
-PySocks @ file:///home/builder/ci_310/pysocks_1640793678128/work
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 python-decouple==3.8
-pytz @ file:///croot/pytz_1671697431263/work
-PyYAML @ file:///croot/pyyaml_1670514731622/work
-QtPy @ file:///opt/conda/conda-bld/qtpy_1662014892439/work
-requests @ file:///croot/requests_1678709721434/work
-ruamel-yaml-conda @ file:///croot/ruamel_yaml_1667489728852/work
-ruamel.yaml @ file:///croot/ruamel.yaml_1666304550667/work
-ruamel.yaml.clib @ file:///croot/ruamel.yaml.clib_1666302247304/work
-sip @ file:///tmp/abs_44cd77b_pu/croots/recipe/sip_1659012365470/work
-six @ file:///tmp/build/80754af9/six_1644875935023/work
-soupsieve @ file:///croot/soupsieve_1680518478486/work
 sqlparse==0.4.4
-toml @ file:///tmp/build/80754af9/toml_1616166611790/work
-toolz @ file:///croot/toolz_1667464077321/work
-tornado @ file:///opt/conda/conda-bld/tornado_1662061693373/work
-tqdm @ file:///croot/tqdm_1679561862951/work
-traitlets @ file:///croot/traitlets_1671143879854/work
 typing_extensions==4.5.0
-ujson @ file:///opt/conda/conda-bld/ujson_1657544923770/work
 uritemplate==4.1.1
-urllib3 @ file:///croot/urllib3_1680254681959/work
 virtualenv==20.23.0
-zstandard @ file:///croot/zstandard_1677013143055/work
