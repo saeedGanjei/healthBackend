@@ -21,22 +21,6 @@ from core.models import User
 class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system."""
     serializer_class = UserSerializer
-    parser_classes = (FormParser, MultiPartParser, JSONParser)
-
-    # def post(self, *args, **kwargs):
-    #     """
-    #         Create a MyModel
-    #         ---
-    #         parameters:
-    #             - name: source
-    #               description: file
-    #               required: True
-    #               type: file
-    #         responseMessages:
-    #             - code: 201
-    #               message: Created
-    #     """
-    #     return super(CreateUserView, self).post(self, *args, **kwargs)
 
 
 class CreateTokenView(ObtainAuthToken):
@@ -54,13 +38,3 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
     def get_object(self):
         """Retrieve and return the authenticated user."""
         return self.request.user
-
-# class MyModelViewSet(viewsets.ModelViewSet):
-#     queryset = User.objects.order_by('-created_at')
-#     serializer_class = UserSerializer
-#     parser_classes = (MultiPartParser, FormParser, JSONParser)
-#     permission_classes = [
-#         permissions.IsAuthenticatedOrReadOnly]
-
-#     def perform_create(self, serializer):
-#         serializer.save(creator=self.request.user)

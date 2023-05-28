@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-izo$12%l3lggtp24+c%x)s@rm(27_)-2p70u)#%6m@v4#@jjoy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS=['saeedGangei.pythonanywhere.com','127.0.0.1']
+ALLOWED_HOSTS = ['saeedGangei.pythonanywhere.com', '127.0.0.1']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -123,19 +124,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = 'static'
 
-MEDIA_ROOT = 'media'
+MEDIA_ROOT = MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+}
+
+SPECTACULAR_SETTINGS = {
+    'COMPONENT_SPLIT_REQUEST': True,
 }

@@ -11,6 +11,4 @@ urlpatterns = [
     path('token/', views.CreateTokenView.as_view(), name='token'),
     path('me/', views.ManageUserView.as_view(), name='me'),
 
-    # path('image/',
-    #      views.MyModelViewSet.as_view({'get': 'list', 'post': 'create'}), name='image'),
 ]

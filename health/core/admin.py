@@ -24,7 +24,7 @@ class UserAdmin(BaseUserAdmin):
             }
         ),
         (_('Important dates'), {'fields': ('last_login', 'created_at')}),
-        (_('Contacts'), {'fields': ('phone_number', 'address')})
+        (_('Contacts'), {'fields': ('phone_number', 'address', 'image')})
     )
     readonly_fields = ['last_login', 'created_at']
     add_fieldsets = (

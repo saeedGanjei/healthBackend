@@ -19,9 +19,8 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """Create and return a user with encrypted password and image"""
-        image = self.context['request'].data.get('image')
         return get_user_model().\
-            objects.create_user(image=image, **validated_data)  # type: ignore
+            objects.create_user(**validated_data)  # type: ignore
 
     def update(self, instance, validated_data):
         password = validated_data.pop('password', None)

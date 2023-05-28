@@ -2,6 +2,9 @@
 Database models
 """
 
+import uuid
+import os
+
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -9,7 +12,16 @@ from django.contrib.auth.models import (
     PermissionsMixin
 )
 from django.core.validators import RegexValidator
-from django.dispatch import receiver
+
+# lets us explicitly set upload path and filename
+
+
+def user_image_file_path(instance, filename):
+    """Generate file path for new user image"""
+    ext = os.path.splitext(filename)[1]
+    filename = f'{uuid.uuid4()}{ext}'
+
+    return os.path.join('media', 'user', filename)
 
 
 class UserManager(BaseUserManager):
@@ -35,11 +47,6 @@ class UserManager(BaseUserManager):
         return user
 
 
-# lets us explicitly set upload path and filename
-def upload_to(instance, filename):
-    return 'images/{filename}'.format(filename=filename)
-
-
 class User(AbstractBaseUser, PermissionsMixin):
     """user in the system"""
     email = models.EmailField(max_length=254, unique=True)
@@ -58,20 +65,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(
         validators=[phone_regex], max_length=17,
         blank=True, default='')  # Validators should be a list
-    image = models.ImageField(
-        upload_to=upload_to, blank=True, null=True, max_length=2048)
+    image = models.ImageField(null=True, upload_to=user_image_file_path)
 
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-
-    def __unicode__(self):
-        return u"photo {0}".format(self.image.url)
-
-
-# @receiver(post_save, sender=User)
-# def user_is_created(sender, instance, created, **kwargs):
-#     if created:
-#         UserProfile.objects.create(user=instance)
-#     else:
-#         instance.profile.save()
