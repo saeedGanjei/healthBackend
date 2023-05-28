@@ -7,6 +7,7 @@ from rest_framework.settings import api_settings
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from rest_framework import viewsets
 from rest_framework.decorators import action
+from rest_framework.response import Response
 
 
 from core.models import User
@@ -15,7 +16,6 @@ from user.serializers import (
     AuthTokenSerializer,
 
 )
-from core.models import User
 
 
 class CreateUserView(generics.CreateAPIView):

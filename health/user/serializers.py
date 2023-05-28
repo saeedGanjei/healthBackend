@@ -9,6 +9,7 @@ from rest_framework import serializers
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for the user objects."""
     image = serializers.ImageField(required=False)
+    first_name = serializers.CharField(required=False)
 
     class Meta:
         model = get_user_model()
@@ -58,3 +59,5 @@ class AuthTokenSerializer(serializers.Serializer):
 
         attrs['user'] = user
         return attrs
+
+
