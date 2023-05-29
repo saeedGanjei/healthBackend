@@ -65,7 +65,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     phone_number = models.CharField(
         validators=[phone_regex], max_length=17,
         blank=True, default='')  # Validators should be a list
-    image = models.ImageField(null=True, upload_to=user_image_file_path)
+    image = models.ImageField(
+        null=True, upload_to=user_image_file_path, blank=True, default='media/user/default.jpeg')
+    first_time_login = models.BooleanField(default=True)
 
     objects = UserManager()
 

@@ -14,9 +14,10 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = ['email', 'password', 'first_name',
-                  'last_name', 'address', 'phone_number', 'image']
+                  'last_name', 'address', 'phone_number', 'image', 'first_time_login']
         extra_kwargs = {'password':
                         {'write_only': True, 'min_length': 6}, }
+        read_only_fields = ('first_time_login',)
 
     def create(self, validated_data):
         """Create and return a user with encrypted password and image"""
@@ -59,5 +60,3 @@ class AuthTokenSerializer(serializers.Serializer):
 
         attrs['user'] = user
         return attrs
-
-

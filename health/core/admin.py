@@ -10,7 +10,7 @@ class UserAdmin(BaseUserAdmin):
     """Define the admin pages for users """
     ordering = ['id']
     list_display = ['email', 'first_name', 'last_name', 'address',
-                    'phone_number', 'created_at', 'image',]
+                    'phone_number', 'created_at', 'image', 'first_time_login']
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         (
@@ -23,10 +23,11 @@ class UserAdmin(BaseUserAdmin):
                 )
             }
         ),
-        (_('Important dates'), {'fields': ('last_login', 'created_at')}),
+        (_('Important dates'), {
+         'fields': ('last_login', 'created_at', 'first_time_login')}),
         (_('Contacts'), {'fields': ('phone_number', 'address', 'image')})
     )
-    readonly_fields = ['last_login', 'created_at']
+    readonly_fields = ['last_login', 'created_at', 'first_time_login']
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
